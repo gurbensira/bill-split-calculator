@@ -18,6 +18,11 @@ export default function App() {
     const totalBill = bill + tipAmount;
     const perPerson = totalBill / people;
 
+    if (!billAmount || !tipPercentage || !numPeople) {
+      alert('Please fill in all fields');
+      return;
+    };
+
     setResult({
       totalBill: totalBill.toFixed(2),
       perPerson: perPerson.toFixed(2)
@@ -107,6 +112,7 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   result: {
+
     padding: 15,
     borderRadius: 5,
   },
