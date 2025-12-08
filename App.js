@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
+import { styles } from './App.styles';
 import { useState } from 'react';
 
 export default function App() {
@@ -29,6 +30,13 @@ export default function App() {
     });
   };
 
+  const resetInputs = () => {
+    setBillAmount('')
+    setTipPercentage('')
+    setNumPeople('')
+    setResult(null)
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -57,8 +65,11 @@ export default function App() {
           value={numPeople}
           onChangeText={setNumPeople}
         />
-
-        <Button title="Calculate" onPress={calculateSplit} />
+        <View
+          style={styles.buttonBox}>
+          <Button title="Calculate" onPress={calculateSplit} />
+          <Button title="Reset" onPress={resetInputs} />
+        </View>
       </View>
 
       <View style={styles.resultBox}>
@@ -76,44 +87,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // padding: 20,
-  },
-  box: {
-    // backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 40,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 10,
-    marginBottom: 10,
-    width: '100%',
-    borderRadius: 5,
-  },
-  resultBox: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#f0f0f0',
-    height: '20%',
-    width: '60%',
-    borderRadius: 5
-  },
-  result: {
 
-    padding: 15,
-    borderRadius: 5,
-  },
-});
