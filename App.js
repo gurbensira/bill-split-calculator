@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button, Pressable } from 'react-native';
 import { styles } from './App.styles';
 import { useState } from 'react';
 
@@ -67,8 +67,13 @@ export default function App() {
         />
         <View
           style={styles.buttonBox}>
-          <Button title="Calculate" onPress={calculateSplit} />
-          <Button title="Reset" onPress={resetInputs} />
+          <Pressable style={styles.calculateButton} onPress={calculateSplit}>
+            <Text style={styles.calculateButtonText}>Calculate</Text>
+          </Pressable>
+
+          <Pressable style={styles.resetButton} onPress={resetInputs}>
+            <Text style={styles.resetButtonText}>Reset</Text>
+          </Pressable>
         </View>
       </View>
 

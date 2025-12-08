@@ -43,6 +43,33 @@ export const styles = StyleSheet.create({
     buttonBox: {
         flexDirection: 'row',
         width: '100%',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+    },
+    resetButton: {
+        backgroundColor: '#f20d42ff',  // Blue background
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+        marginTop: 10,
+        width: '45%'
+    },
+    resetButtonText: {
+        color: '#fff',           // White text
+        fontSize: 18,
+        fontWeight: '600',
+
+    },
+    calculateButton: {
+        backgroundColor: '#007AFF',  // Blue background
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+        marginTop: 10,
+        width: '45%'
+    },
+    calculateButtonText: {
+        color: '#fff',           // White text
+        fontSize: 18,
+        fontWeight: '600',
     }
 });
